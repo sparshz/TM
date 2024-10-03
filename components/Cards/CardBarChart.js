@@ -1,7 +1,29 @@
 import React from "react";
-import Chart from "chart.js";
+// import {Chart} from "chart.js";
+import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  Title,
+  CategoryScale,
+  BarController,
+  BarElement,
+} from "chart.js";
 
 export default function CardBarChart() {
+  Chart.register(
+    LineController,
+    BarController,
+    BarElement,
+    LineElement,
+    PointElement,
+    BarController,
+    LinearScale,
+    Title,
+    CategoryScale
+  );
   React.useEffect(() => {
     let config = {
       type: "bar",

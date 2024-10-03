@@ -1,5 +1,23 @@
 import React from "react";
-import Chart from "chart.js";
+// import Chart from "chart.js";
+import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  Title,
+  CategoryScale,
+} from "chart.js";
+
+Chart.register(
+  LineController,
+  LineElement,
+  PointElement,
+  LinearScale,
+  Title,
+  CategoryScale
+);
 
 export default function CardLineChart() {
   React.useEffect(() => {
@@ -103,6 +121,7 @@ export default function CardLineChart() {
         },
       },
     };
+
     var ctx = document.getElementById("line-chart").getContext("2d");
     window.myLine = new Chart(ctx, config);
   }, []);
